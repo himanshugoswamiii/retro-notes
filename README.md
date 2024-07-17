@@ -1,3 +1,10 @@
+## How to run the app ?
+```sh
+python index.py <notes_directory>
+```
+
+---
+
 Q : Why do i've to remove `.md` from file-names ?
 - Because wiki links don't work with `.md` extension
 
