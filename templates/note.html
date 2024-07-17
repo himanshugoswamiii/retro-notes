@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ filename }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container flex-container">
+        <div class="sidebar">
+            <h2>All Notes</h2>
+            <ul>
+                {% for file in files %}
+                    <li><a href="/note/{{ file }}">{{ file }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="main-content">
+            <h1>{{ filename }}</h1>
+            <hr>
+            <div class="markdown-content">
+                {{ content|safe }}
+            </div>
+            <hr />
+            <a href="/" style="display: block; text-align: center; margin-top: 20px;">Back to index</a>
+        </div>
+    </div>
+</body>
+</html>
